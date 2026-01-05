@@ -1,7 +1,7 @@
-                                                                    Midterm report
+                                                                  Midterm report
 This report presents the progress and preliminary findings of the winter project titled Stock Price Prediction Using Long Short-Term Memory (LSTM) Networks. The primary objective of the project is to build a deep learning-based predictive model capable of forecasting future stock prices using historical stock market data. Owing to their capability to capture long-term temporal dependencies, LSTM networks are well suited for time-series forecasting tasks.
 
-                                                                   Work Done Till Now:
+                                                                  Work Done Till Now:
 Over the duration of the winter project, I have systematically built the background knowledge required to implement an LSTM-based stock price prediction model. The work completed so far is summarized below.
 1.	Programming and Libraries
 o	Revised and practiced Python programming fundamentals.
@@ -64,7 +64,7 @@ o	theoretical concepts
 o	implementation practice
 o	understanding of machine learning workflow
 
-                                                        What have I learned:
+                                                          What have I learned:
 
 Through the above work, I have gained the following key learning outcomes:
 •	Confidence in Python programming for data science
