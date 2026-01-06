@@ -1,91 +1,132 @@
-                                                                  Midterm report
-This report presents the progress and preliminary findings of the winter project titled Stock Price Prediction Using Long Short-Term Memory (LSTM) Networks. The primary objective of the project is to build a deep learning-based predictive model capable of forecasting future stock prices using historical stock market data. Owing to their capability to capture long-term temporal dependencies, LSTM networks are well suited for time-series forecasting tasks. This repo also includes all the assignment submissions given throughout the project.
+# 📈 Project MidTerm Report: Stock Price Prediction Using LSTM Model
 
-                                                                  Work Done Till Now:
-Over the duration of the winter project, I have systematically built the background knowledge required to implement an LSTM-based stock price prediction model. The work completed so far is summarized below.
-1.	Programming and Libraries
-o	Revised and practiced Python programming fundamentals.
-o	Learned and used important data science libraries including:
-	NumPy – array operations and numerical computation
-	Pandas – working with datasets, DataFrames, cleaning and preprocessing data
-	Matplotlib and Seaborn – visualization of trends, line plots, histograms, correlation plots
-	Scikit-learn – basic machine learning utilities and preprocessing tools
-o	Completed multiple coding exercises using these libraries to gain fluency.
-2.	Introduction to Stock Markets
-o	Studied basic stock market concepts such as:
-	stocks, indices, returns and trends
-	candles and price movements
-	support and resistance
-o	Understood how stock prices are influenced by market behavior and news.
-3.	Machine Learning Foundations
-o	Learned the basics of machine learning and its types, primarily:
-	supervised learning
-	unsupervised learning
-o	Studied in detail:
-	Linear Regression – idea of fitting a best-fit line and minimizing error
-	Logistic Regression – binary classification and sigmoid function
-4.	Technical Analysis
-o	Completed a full technical analysis playlist from Zerodha Varsity.
-o	Understood concepts such as indicators, moving averages, patterns, and candlestick interpretation.
-5.	Working with Financial Data
-o	Learned to use the yfinance library to:
-	download historical stock market data
-	handle OHLC (Open–High–Low–Close) format
-	extract closing prices for modeling
-	visualize stock price movements
-6.	Neural Networks and Deep Learning Basics
-o	Studied the fundamentals of artificial neural networks (ANNs):
-	perceptron model
-	hidden layers and activation functions
-o	Understood key concepts including:
-	gradient descent
-	cost/loss functions
-	backpropagation
-7.	Introduction to CNN and RNN
-o	Gained introductory understanding of:
-	Convolutional Neural Networks (CNNs)
-	Recurrent Neural Networks (RNNs) and sequential data modeling
-8.	Learning LSTM Networks
-o	Studied Long Short-Term Memory (LSTM) networks in detail:
-	motivation behind LSTM vs simple RNN
-	vanishing gradient problem
-	gates in LSTM (input, forget, output)
-	ability to model long-term dependencies in time series
-9.	PyTorch Framework
-o	Learned basics of PyTorch:
-	tensors and computational graphs
-	creating simple neural network models
-	using DataLoader and Dataset classes
-o	Practiced implementing basic neural networks using PyTorch.
-10.	Weekly Assignments
-•	Consistently completed the weekly assignments provided as part of the project.
-•	These assignments reinforced:
-o	theoretical concepts
-o	implementation practice
-o	understanding of machine learning workflow
+Learning Python and applying it to stocks has been an exciting journey. Unlike many other programming languages, Python feels more like writing in English, making it fun. 
+Below is a detailed breakdown of everything I learned and implemented to make this project a reality.
 
-                                                             What have I learned:
 
-Through the above work, I have gained the following key learning outcomes:
-•	Confidence in Python programming for data science
-•	Ability to perform:
-o	data loading
-o	cleaning
-o	preprocessing
-o	visualization
-•	Understanding of how stock markets operate at a basic level
-•	Clear conceptual understanding of:
-o	regression models
-o	classification models
-o	evaluation ideas like loss and optimization
-•	Importance of time series behavior in stock prices
-•	Ability to fetch real-world stock data using yfinance
-•	Understanding that:
-o	neural networks learn from data
-o	gradients drive weight updates
-o	backpropagation connects errors to parameters
-•	Knowledge of why RNNs and LSTMs are suited for sequential data
-•	Practical exposure to PyTorch, preparing for final model implementation
-•	Improved ability to read documentation, debug errors, and complete assignments independently
+##  1. Python Basics
 
-Overall, I now have the theoretical and practical foundation necessary to move towards implementing the LSTM-based stock price prediction model in the next phase of the project.
+Building a strong foundation was the first step.
+### Data Types & Structures
+[cite_start]Python allows for dynamic typing, meaning a variable's type can change during runtime[cite: 37]. I explored the common data types:
+* **Integers & Floats:** For handling prices and volumes.
+* **Strings:** Text like ticker symbols ("AAPL").
+* [cite_start]**Booleans:** True/False flags for logic[cite: 43].
+
+I also mastered the core data structures:
+* **Lists:** Versatile and mutable; [cite_start]I used them to store sequences of data[cite: 66].
+* [cite_start]**Dictionaries:** These store data as key-value pairs, which is perfect for organizing configuration parameters[cite: 73].
+
+### Operators, Loops, & Functions
+* [cite_start]**Operators:** Python supports basic arithmetic like addition and exponentiation (`**`)[cite: 47, 51].
+* [cite_start]**Loops:** I used `For Loops` to iterate over my datasets and `While Loops` to run training epochs[cite: 62, 63].
+* **Functions:** Defining functions using `def` helped me keep my code clean and reusable.
+* **Classes:** Understanding Object-Oriented Programming was crucial. I learned to define classes with `__init__`, which became essential later when building custom models in PyTorch.
+
+---
+
+##  2. Libraries in Python
+
+[cite_start]The availability of frameworks made working with data and AI models so much easier[cite: 34].
+
+### NumPy
+[cite_start]Numpy is fundamental for numerical computing[cite: 135].
+* **Arrays:** I learned that Numpy arrays are far more efficient than Python lists for math operations.
+* **Indexing and Slicing:** Essential for preparing time-series data windows.
+* [cite_start]**Numpy Maths:** Functions like `np.mean()` helped me normalize my data[cite: 139].
+
+### Pandas
+[cite_start]Pandas is a powerhouse for data manipulation[cite: 143].
+* **Series & DataFrames:** I used DataFrames (2D) to structure the OHLC (Open, High, Low, Close) stock data.
+* [cite_start]**Read CSV/JSON:** Loading datasets was simple using `pd.read_csv()`[cite: 145].
+* **Locate Function:** I used `.loc[]` and `.iloc[]` to filter specific dates and prices.
+
+### Matplotlib
+[cite_start]Visualization is key to understanding data[cite: 94].
+* [cite_start]**Plotting:** I used `plt.plot()` to visualize price trends vs. my predictions[cite: 100].
+* **Subplots:** Great for stacking price charts and volume bars.
+* [cite_start]**Histograms & Pie Charts:** Helped in analyzing the distribution of returns and portfolio allocation[cite: 127].
+
+### Sklearn
+I used Scikit-Learn for preprocessing and baseline models.
+* **Linear Regression:** I used this to establish a simple baseline trendline before moving to complex deep learning models.
+
+
+##  3. Introduction to Stock Market
+
+To understand *what* I was predicting, I dove into resources from **Zerodha Varsity**.
+* I learned that the stock market is essentially a mechanism for price discovery driven by supply and demand.
+* **Volatility:** Prices don't move in straight lines; understanding market noise was a big realization.
+* **Indices:** Learned how Nifty and Sensex act as barometers for the overall market health.
+
+---
+
+##  4. Machine Learning
+
+I explored the broader landscape of ML before narrowing down my approach.
+* **Types of ML:**
+    * **Supervised:** Learning from labeled data (this is what I used for price prediction).
+    * **Unsupervised:** Finding hidden patterns (like clustering similar stocks).
+    * **Reinforcement:** Learning through trial and error (often used in trading bots).
+    
+* **Linear vs. Logistic Regression:**
+    * **Linear Regression:** Predicts a continuous value (like tomorrow's price).
+    * [cite_start]**Logistic Regression:** Predicts a probability (0 or 1), useful for predicting "Buy" vs "Sell" signals[cite: 168].
+    
+* **The Overfitting Issue:**
+    * I ran into a problem where my model memorized the training data but failed on new data.
+    * **Solution:** I learned to use regularization and simpler architectures to fix this.
+
+
+##  5. Technical Analysis
+
+Using Zerodha Varsity, I learned that "History tends to repeat itself."
+* **Candlesticks:** I learned to read OHLC candles to gauge market sentiment.
+* **Indicators:** I studied Moving Averages (SMA/EMA) and RSI. These aren't just lines on a chart; they became extra **features** (inputs) for my neural network to help it learn momentum.
+
+
+##  6. YFinance Library
+
+Data is the fuel for Deep Learning.
+* Instead of downloading manual CSVs, I used the `yfinance` library.
+* **Fetching Data:** With `yf.download()`, I could pull years of historical data for any ticker symbol in seconds. This allowed me to test my model on multiple stocks easily.
+
+
+##  7. Neural Networks
+
+[cite_start]Neural networks are powerful models inspired by the human brain[cite: 417].
+* **Basics:** They consist of layers of neurons—an input layer, hidden processing layers, and an output layer.
+* **Mechanism:** Each neuron takes an input, multiplies it by a "weight" (importance), adds a "bias," and passes it through an activation function.
+
+
+##  8. Gradient Descent & Backpropagation
+
+To understand how the network learns, I had to get into the math.
+* **Gradient Descent:** This is the optimization algorithm. [cite_start]It iteratively tweaks the weights to minimize the error (loss)[cite: 185].
+* **Backpropagation:** I used the example of Logistic Regression to grasp this. It’s essentially the chain rule of calculus, calculating how much each specific weight contributed to the error and adjusting it backward.
+
+
+##  9. PyTorch
+
+I chose PyTorch for its flexibility and dynamic computation graphs.
+* **Tensors:** The fundamental building block (like Numpy arrays, but GPU-ready).
+* **Autograd:** This feature automatically calculated the gradients for me, saving me from writing complex calculus code from scratch.
+* **Dataset & DataLoader:** I implemented custom classes to batch my time-series data efficiently.
+* **Implementation:** I built Linear and Logistic regression models from scratch in PyTorch to understand the syntax before building the LSTM.
+* **Saving/Loading:** Learned to use `torch.save()` so I wouldn't lose my trained model after closing the notebook.
+
+
+##  10. LSTM (Long Short-Term Memory)
+
+Standard Neural Networks struggle with time-series data because they have no "memory" of what happened 100 days ago. Enter LSTM.
+* **Basics:** LSTM is a type of Recurrent Neural Network (RNN) designed to learn long-term dependencies.
+* **How it Works:** It uses a gate mechanism to control the flow of information:
+    1.  **Forget Gate:** Decides what history is irrelevant and should be thrown away.
+    2.  **Input Gate:** Decides what new information is important to store.
+    3.  **Output Gate:** Decides what the next hidden state should be.
+    
+**Key Takeaway:** This architecture allows the model to capture trends (like a long-term bull market) while ignoring temporary noise, making it perfect for stock price prediction.
+
+
+### Acknowledgement
+A huge shoutout to the mentors who guided me. Their constant support, no matter how small or big the issue, made learning so much easier and less intimidating. Thank you for taking the time and effort to help me grow; I am incredibly grateful for your encouragement and expertise.
