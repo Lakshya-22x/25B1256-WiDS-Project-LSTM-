@@ -8,44 +8,43 @@ Below is a detailed breakdown of everything I learned and implemented to make th
 
 Building a strong foundation was the first step.
 ### Data Types & Structures
-[cite_start]Python allows for dynamic typing, meaning a variable's type can change during runtime[cite: 37]. I explored the common data types:
+Python allows for dynamic typing, meaning a variable's type can change during runtime. I explored the common data types:
 * **Integers & Floats:** For handling prices and volumes.
 * **Strings:** Text like ticker symbols ("AAPL").
-* [cite_start]**Booleans:** True/False flags for logic[cite: 43].
+* **Booleans:** True/False flags for logic.
 
 I also mastered the core data structures:
-* **Lists:** Versatile and mutable; [cite_start]I used them to store sequences of data[cite: 66].
-* [cite_start]**Dictionaries:** These store data as key-value pairs, which is perfect for organizing configuration parameters[cite: 73].
+* **Lists:** Versatile and mutable; I used them to store sequences of data.
+* **Dictionaries:** These store data as key-value pairs, which is perfect for organizing configuration parameters.
 
 ### Operators, Loops, & Functions
-* [cite_start]**Operators:** Python supports basic arithmetic like addition and exponentiation (`**`)[cite: 47, 51].
-* [cite_start]**Loops:** I used `For Loops` to iterate over my datasets and `While Loops` to run training epochs[cite: 62, 63].
+* **Operators:** Python supports basic arithmetic like addition and exponentiation (`**`).
+* **Loops:** I used `For Loops` to iterate over my datasets and `While Loops` to run training epochs.
 * **Functions:** Defining functions using `def` helped me keep my code clean and reusable.
 * **Classes:** Understanding Object-Oriented Programming was crucial. I learned to define classes with `__init__`, which became essential later when building custom models in PyTorch.
 
----
 
 ##  2. Libraries in Python
 
-[cite_start]The availability of frameworks made working with data and AI models so much easier[cite: 34].
+The availability of frameworks made working with data and AI models so much easier.
 
 ### NumPy
-[cite_start]Numpy is fundamental for numerical computing[cite: 135].
+Numpy is fundamental for numerical computing.
 * **Arrays:** I learned that Numpy arrays are far more efficient than Python lists for math operations.
 * **Indexing and Slicing:** Essential for preparing time-series data windows.
-* [cite_start]**Numpy Maths:** Functions like `np.mean()` helped me normalize my data[cite: 139].
+* **Numpy Maths:** Functions like `np.mean()` helped me normalize my data.
 
 ### Pandas
-[cite_start]Pandas is a powerhouse for data manipulation[cite: 143].
+Pandas is a powerhouse for data manipulation.
 * **Series & DataFrames:** I used DataFrames (2D) to structure the OHLC (Open, High, Low, Close) stock data.
-* [cite_start]**Read CSV/JSON:** Loading datasets was simple using `pd.read_csv()`[cite: 145].
+* **Read CSV/JSON:** Loading datasets was simple using `pd.read_csv()`.
 * **Locate Function:** I used `.loc[]` and `.iloc[]` to filter specific dates and prices.
 
 ### Matplotlib
-[cite_start]Visualization is key to understanding data[cite: 94].
-* [cite_start]**Plotting:** I used `plt.plot()` to visualize price trends vs. my predictions[cite: 100].
+Visualization is key to understanding data.
+* **Plotting:** I used `plt.plot()` to visualize price trends vs. my predictions.
 * **Subplots:** Great for stacking price charts and volume bars.
-* [cite_start]**Histograms & Pie Charts:** Helped in analyzing the distribution of returns and portfolio allocation[cite: 127].
+* **Histograms & Pie Charts:** Helped in analyzing the distribution of returns and portfolio allocation.
 
 ### Sklearn
 I used Scikit-Learn for preprocessing and baseline models.
@@ -59,7 +58,6 @@ To understand *what* I was predicting, I dove into resources from **Zerodha Vars
 * **Volatility:** Prices don't move in straight lines; understanding market noise was a big realization.
 * **Indices:** Learned how Nifty and Sensex act as barometers for the overall market health.
 
----
 
 ##  4. Machine Learning
 
@@ -71,7 +69,7 @@ I explored the broader landscape of ML before narrowing down my approach.
     
 * **Linear vs. Logistic Regression:**
     * **Linear Regression:** Predicts a continuous value (like tomorrow's price).
-    * [cite_start]**Logistic Regression:** Predicts a probability (0 or 1), useful for predicting "Buy" vs "Sell" signals[cite: 168].
+    * **Logistic Regression:** Predicts a probability (0 or 1), useful for predicting "Buy" vs "Sell" signals.
     
 * **The Overfitting Issue:**
     * I ran into a problem where my model memorized the training data but failed on new data.
@@ -94,7 +92,7 @@ Data is the fuel for Deep Learning.
 
 ##  7. Neural Networks
 
-[cite_start]Neural networks are powerful models inspired by the human brain[cite: 417].
+Neural networks are powerful models inspired by the human brain.
 * **Basics:** They consist of layers of neurons—an input layer, hidden processing layers, and an output layer.
 * **Mechanism:** Each neuron takes an input, multiplies it by a "weight" (importance), adds a "bias," and passes it through an activation function.
 
@@ -102,7 +100,7 @@ Data is the fuel for Deep Learning.
 ##  8. Gradient Descent & Backpropagation
 
 To understand how the network learns, I had to get into the math.
-* **Gradient Descent:** This is the optimization algorithm. [cite_start]It iteratively tweaks the weights to minimize the error (loss)[cite: 185].
+* **Gradient Descent:** This is the optimization algorithm. It iteratively tweaks the weights to minimize the error (loss).
 * **Backpropagation:** I used the example of Logistic Regression to grasp this. It’s essentially the chain rule of calculus, calculating how much each specific weight contributed to the error and adjusting it backward.
 
 
