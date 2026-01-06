@@ -1,4 +1,4 @@
-# 📈 Project MidTerm Report: Stock Price Prediction Using LSTM Model
+# Project MidTerm Report: Stock Price Prediction Using LSTM Model
 
 Learning Python and applying it to stocks has been an exciting journey. Unlike many other programming languages, Python feels more like writing in English, making it fun. 
 Below is a detailed breakdown of everything I learned and implemented to make this project a reality.
